@@ -79,8 +79,8 @@ function MainTabs() {
 
 // Root navigator
 export default function AppNavigator() {
-  // TODO: Check if user is authenticated
-  const isAuthenticated = false;
+  // Skip onboarding for MVP - go straight to main app
+  const isAuthenticated = true;
 
   return (
     <NavigationContainer>
