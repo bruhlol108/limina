@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -34,9 +35,11 @@ function MainTabs() {
         tabBarActiveTintColor: '#6C63FF',
         tabBarInactiveTintColor: '#757575',
         tabBarStyle: {
-          paddingBottom: 8,
+          paddingBottom: 20,
           paddingTop: 8,
-          height: 60,
+          height: 85,
+          borderTopWidth: 1,
+          borderTopColor: '#E0E0E0',
         },
         headerShown: false,
       }}
@@ -46,7 +49,9 @@ function MainTabs() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-          // TODO: Add icon
+          tabBarIcon: ({ color }) => (
+            <Text style={{ fontSize: 20, fontWeight: '600', color }}>●</Text>
+          ),
         }}
       />
       <Tab.Screen
@@ -54,7 +59,9 @@ function MainTabs() {
         component={InsightsScreen}
         options={{
           tabBarLabel: 'Insights',
-          // TODO: Add icon
+          tabBarIcon: ({ color }) => (
+            <Text style={{ fontSize: 20, fontWeight: '600', color }}>▤</Text>
+          ),
         }}
       />
       <Tab.Screen
@@ -62,7 +69,9 @@ function MainTabs() {
         component={DealsScreen}
         options={{
           tabBarLabel: 'Deals',
-          // TODO: Add icon
+          tabBarIcon: ({ color }) => (
+            <Text style={{ fontSize: 20, fontWeight: '600', color }}>◈</Text>
+          ),
         }}
       />
       <Tab.Screen
@@ -70,7 +79,9 @@ function MainTabs() {
         component={ProfileScreen}
         options={{
           tabBarLabel: 'Profile',
-          // TODO: Add icon
+          tabBarIcon: ({ color }) => (
+            <Text style={{ fontSize: 20, fontWeight: '600', color }}>◉</Text>
+          ),
         }}
       />
     </Tab.Navigator>
